@@ -1,0 +1,4 @@
+docker pull mongo
+docker run --name citi-mongo-c1 -p 27017:27017 -d mongo:latest
+docker exec -it citi-mongo-c1 /bin/bash
+mongosh
