@@ -1,0 +1,5 @@
+java 11
+eclipse 2021/2022 jee
+mysql community server 5.4/8
+mysql workbench
+docker desktop
