@@ -6,3 +6,5 @@ docker run --name citi-mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=t
 
 docker exec -it citi-mysql mysql -u root -p
 
+create database boabanknov2022;
+
