@@ -4,3 +4,5 @@ docker exec -it citi-mongo-c1 /bin/bash
 mongosh
 docker run --name citi-mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=tradingdb2020 -e MYSQL_USER=demo_user -e MYSQL_PASSWORD=demo_pass -d mysql
 
+docker exec -it citi-mysql mysql -u root -p
+
