@@ -19,4 +19,4 @@ docker tag customerapp:latest eswaribala/vbankdec2022repo:customerapp
 
 docker push eswaribala/vbankdec2022repo:customerapp
 
-docker pull eswaribala/vbankdec2022repo
+docker pull eswaribala/vbankdec2022repo:customerapp
