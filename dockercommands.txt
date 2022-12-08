@@ -8,3 +8,4 @@ docker exec -it citi-mysql mysql -u root -p
 
 create database boabanknov2022;
 
+docker run --name customerapp-c1  -p 6062:6062 --link citi-mysql:mysql -d customerapp
