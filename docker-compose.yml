@@ -1,0 +1,44 @@
+version: '3.9'
+
+services:
+  mysqlservice:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=boabanknov2022
+    volumes:
+      - /data/mysql
+    healthcheck:        
+        interval: 30s
+        timeout: 10s
+        retries: 5
+    networks:
+      - citi_network  
+   
+  customer-app:
+    image: customerapp
+    build:
+      context: ./
+      dockerfile: dockerfile
+    depends_on:
+      - mysqlservice
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 15
+        window: 50s
+    ports:
+       #- 8060-8070:7070
+        - 6062:6062
+    volumes:
+      - /data/compose-app
+
+    networks:
+      - citi_network  
+
+### put all the networks here
+networks:
+  citi_network:
+      external: true
+  
