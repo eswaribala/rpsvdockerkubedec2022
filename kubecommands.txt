@@ -91,7 +91,9 @@ kubectl apply -f deployment-v7.yml
 kubectl expose deployment --port 7070 customerapp --type=LoadBalancer --name=customerservicev1
 #external ip pending then
 sudo microk8s kubectl patch svc traderservicev1  -p '{"spec": {"type": "LoadBalancer", "externalIPs":["172.22.0.1"]}}'
-
+#delete
+kubectl delete deploy mysql-app
+kubectl delete svc mysqlservice
 
 kubectl port-forward svc/customerservicev1 8060:7070
 kubectl scale --replicas=1 deployment customerapp
