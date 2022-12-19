@@ -85,7 +85,11 @@ kubectl apply -f mysql-deployment.yaml
 kubectl get pods
 kubectl get svc
 kubectl get deploy
+#mysql client creation
 kubectl run -it --rm --image=mysql --restart=Never mysql-client -- mysql -h mysql -ppassword
+#alternative approach to access mysql client
+kubectl exec -it mysql-app-7566c9cc95-7mldf bin/bash
+
 kubectl exec -it mongo-app-7559754fbf-n7mx4 /bin/bash
 kubectl apply -f deployment-v7.yml
 kubectl expose deployment --port 7070 customerapp --type=LoadBalancer --name=customerservicev1
