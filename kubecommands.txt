@@ -72,6 +72,8 @@ docker exec -it my-node-name crictl images
 
 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
+kubectl get all -n kubernetes-dashboard
+
 kubectl apply -f dashboard-adminuser.yaml
 kubectl apply -f admin-role-binding.yml
 kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | sls admin-user | ForEach-Object { $_ -Split '\s+' } | Select -First 1)
