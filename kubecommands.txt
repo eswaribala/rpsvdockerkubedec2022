@@ -1,3 +1,6 @@
+
+https://learn.microsoft.com/en-us/windows/wsl/install-manual
+
 https://phoenixnap.com/kb/install-kubernetes-on-ubuntu
 kubeadm init phase control-plane all --pod-network-cidr 10.244.0.0/16
 kubeadm join 172.20.0.189:6443 --token gxl17d.9v6tpu6k8z6k9h3c --discovery-token-ca-cert-hash sha256:09cc5cdf7aad002cde3dfd2c9e87c0705869af5197da6f5ac6793d7a4b088d37
