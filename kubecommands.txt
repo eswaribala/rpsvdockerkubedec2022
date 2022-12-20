@@ -84,6 +84,10 @@ or
 
 kubectl get secret $(kubectl get serviceaccount dashboard -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode
 
+or
+
+kubectl describe secret admin-user-token-7gtbr -n kubernetes-dashboard
+
 kubectl proxy
 
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
