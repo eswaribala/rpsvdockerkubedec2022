@@ -10,7 +10,7 @@ kubectl run --namespace default mongodb-client --rm --tty -i --restart="Never" -
 
 
 
-mongosh admin --host "mongodb-0.mongodb-headless.default.svc.cluster.local:27017,mongodb-1.mongodb-headless.default.svc.cluster.local:27017" --authenticationDatabase admin -u root -p root123
+mongo admin --host "mongodb-0.mongodb-headless.default.svc.cluster.local:27017,mongodb-1.mongodb-headless.default.svc.cluster.local:27017" --authenticationDatabase admin -u root -p root123
 
 
 use mydb
