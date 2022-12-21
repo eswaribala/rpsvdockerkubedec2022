@@ -1,0 +1,34 @@
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+helm install mongodb bitnami/mongodb --set podSecurityContext.fsGroup="",containerSecurityContext.runAsUser="1001080001",podSecurityContext.enabled=false,architecture=replicaset,auth.replicaSetKey=root123,auth.rootPassword=root123
+
+kubectl get secret --namespace default mongodb -o jsonpath="{.data.mongodb-root-password}"
+
+cm9vdDEyMw==
+
+kubectl run --namespace default mongodb-client --rm --tty -i --restart="Never" --env="MONGODB_ROOT_PASSWORD=cm9vdDEyMw==" --image docker.io/bitnami/mongodb:4.4.13-debian-10-r9 --command -- bash
+
+
+
+mongosh admin --host "mongodb-0.mongodb-headless.default.svc.cluster.local:27017,mongodb-1.mongodb-headless.default.svc.cluster.local:27017" --authenticationDatabase admin -u root -p root123
+
+
+use mydb
+
+db.post.insert([
+  {
+    title: "MongoDB to Kafka testing",
+    description: "Debezium connector",
+    by: "Karan",
+    url: "http://redhat.com",
+    tags: ["mongodb", "debezium", "ROSAK"],
+    likes: 100
+  }
+])
+====================================
+Alternative
+kubectl port-forward service/mongodb-headless 27017 &
+mongo --host 127.0.0.1 --authenticationDatabase admin -u root -p root123
+=====================================================
+
+
