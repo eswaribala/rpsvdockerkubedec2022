@@ -113,6 +113,8 @@ kubectl get deploy
 kubectl run -it --rm --image=mysql --restart=Never mysql-client -- mysql -h mysql -ppassword
 #alternative approach to access mysql client
 kubectl exec -it mysql-app-7566c9cc95-7mldf bin/bash
+$mysql -p
+
 #third approach to access mysql client
 kubectl run -it --rm --image=mysql --restart=Never mysql-client -- mysql -h 10.1.0.34 -ppassword
 
