@@ -1,0 +1,12 @@
+openapi: 3.0.0
+info:
+  title: user
+  version: '1.0'
+  contact:
+    name: Parameswari
+    url: 'https://eswari.blog.io'
+    email: Parameswaribala@gmail.com
+  
+  description: ''
+paths: {}
+  
