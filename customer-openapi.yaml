@@ -1,0 +1,36 @@
+openapi: 3.0.0
+info:
+  title: Customer API
+  version: '1.0'
+  contact:
+    name: Parameswari
+    url: 'https://eswari.blog.io'
+    email: Parameswaribala@gmail.com
+  
+  description: ''
+paths: 
+  '/individuals/v1.0/{customerId}':
+    parameters:
+      - schema:
+          type: integer
+        name: customerId
+        in: path
+        required: true
+    get:
+      summary: customer
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  customerId:
+                    type: integer
+                  customerName:
+                    type: string
+      operationId: getCustomersBycustomerId
+      description: Retrieve a specific customer by ID
+  
