@@ -1,0 +1,1 @@
+oc login --token=sha256~4cATRG69ITjqP_WU4xa9JVOX46aezfz1dTr4Bz4Wm34 --server=https://api.ocp.rps.com:6443
