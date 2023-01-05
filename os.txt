@@ -1,1 +1,3 @@
 oc login --token=sha256~4cATRG69ITjqP_WU4xa9JVOX46aezfz1dTr4Bz4Wm34 --server=https://api.ocp.rps.com:6443
+
+oc new-app -e MYSQL_USER=demo_user MYSQL_PASSWORD=demo_pass MYSQL_DATABASE= testdb MYSQL_ROOT_PASSWORD=password --docker-image="mysql:latest"
