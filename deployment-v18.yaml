@@ -25,8 +25,16 @@ spec:
         env:
             - name: MYSQL_URL
               value: jdbc:mysql://mysqlservice:3306/boabanknov2022?useSSL=false
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+              drop: ["ALL"]
+          runAsNonRoot: true 
+          seccompProfile:
+                   type: RuntimeDefault
       #imagePullSecrets:  
       #- name: globalaks-key
+        
 
 status: {}
 --- 
