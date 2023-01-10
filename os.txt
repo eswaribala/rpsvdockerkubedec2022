@@ -3,3 +3,6 @@ oc login --token=sha256~4cATRG69ITjqP_WU4xa9JVOX46aezfz1dTr4Bz4Wm34 --server=htt
 oc -n ostrproject new-app -e MYSQL_USER=demo_user MYSQL_PASSWORD=demo_pass MYSQL_DATABASE=testdb MYSQL_ROOT_PASSWORD=password --docker-image="mysql:latest"
 
 mysql -h 172.30.54.102 -u root -p 
+
+#ingress
+oc describe ingresscontroller/default -n openshift-ingress-operator
