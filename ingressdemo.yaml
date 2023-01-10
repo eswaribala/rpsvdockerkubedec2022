@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: customeringress
+ annotations:
+   haproxy.router.openshift.io/rewrite-target: / 
+spec:
+ rules:
+   - host: customerapi-ostrproject.apps.ocp.rps.com 
+     http:
+       paths:
+         - path: /
+           pathType: Prefix 
+           backend:
+             service:
+                name: customerservice
+                port:
+                  number: 6062
+
