@@ -12,3 +12,4 @@ oc process -f https://github.com/openshift/origin/raw/master/examples/helm/tille
 
 
 oc rollout status deployment tiller
+oc apply -f tiller-rbac.yaml
