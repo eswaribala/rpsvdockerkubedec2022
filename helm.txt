@@ -18,3 +18,7 @@ helm init
 helm search prometheus
 helm fetch --untar stable/prometheus
 cd prometheus
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
+
+
