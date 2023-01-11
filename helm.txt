@@ -13,3 +13,8 @@ oc process -f https://github.com/openshift/origin/raw/master/examples/helm/tille
 
 oc rollout status deployment tiller
 oc apply -f tiller-rbac.yaml
+
+helm init
+helm search prometheus
+helm fetch --untar stable/prometheus
+cd prometheus
