@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ name: postgres-config
+ labels:
+  app: postgres
+data:
+ POSTGRESQL_DATABASE: postgresdb
+ POSTGRESQL_USER: admin
+ POSTGRESQL_PASSWORD: test123
