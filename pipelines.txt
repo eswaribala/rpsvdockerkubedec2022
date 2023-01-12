@@ -1,1 +1,2 @@
 https://github.com/openshift/pipelines-tutorial
+tkn pipelinerun logs -f sample-pipeline-run
