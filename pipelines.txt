@@ -1,2 +1,4 @@
 https://github.com/openshift/pipelines-tutorial
 tkn pipelinerun logs -f sample-pipeline-run
+
+tkn pipeline start build-and-deploy -w name=shared-workspace,volumeClaimTemplateFile=https://raw.githubusercontent.com/openshift/pipelines-tutorial/master/01_pipeline/03_persistent_volume_claim.yaml -p deployment-name=pipelines-customer-api -p git-url=https://github.com/eswaribala/osjan2023.git -p IMAGE=eswaribala/vbankdec2022repo/customerapi --use-param-defaults
