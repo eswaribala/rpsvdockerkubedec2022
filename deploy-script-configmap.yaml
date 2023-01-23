@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: deploy-script
+data:
+  deployScript.sh: |
+    #!/bin/bash
+    kubectl apply -f https://raw.githubusercontent.com/eswaribala/rpsvdockerkubedec2022/master/01_apply_manifest_task.yaml
+    echo "Creaing 'web-app'"
+    kubectl create deployment web-app --image=nginx 
+    sleep 10
+    echo "Deleting 'web-app'"
+    kubectl delete deployment web-app
